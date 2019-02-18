@@ -7,12 +7,14 @@ var crystalArray = [];
 
 
 function initialStart() {
-  var target = getRandomTarget();
+  getTarget();
+  getFirstCrystals();
+}
+
+function getTarget() {
+  target = getRandomTarget();
   console.log("target: " + target);
   $("#targetBox").text(target);
-  getFirstCrystals();
-
-
 }
 
 function getFirstCrystals() {
@@ -84,19 +86,52 @@ function getRandomCrystal(min, max) {
 initialStart();
 
 
-$(".crystalImage").on("click", function() {
-    alert("Good luck!");
-    Math.floor((Math.random() * 10) + 1); 
-    // between 1-10
-
+$("#crystal1").on("click", function() {
+  userScore = userScore + crystalArray[0];
+  checkScore();
   });
 
-if (userScore === target) {
+$("#crystal2").on("click", function() {
+  userScore = userScore + crystalArray[1];
+  checkScore();
+  });
+
+$("#crystal3").on("click", function() {
+  userScore = userScore + crystalArray[2];
+  checkScore();
+  });
+
+$("#crystal4").on("click", function() {
+  userScore = userScore + crystalArray[3];
+  checkScore();
+  });
+    
+
+function checkScore() {
+  $("#scoreBox").text(userScore);
+
+  if (userScore === target) {
     alert("You win!");
     wins ++;
+    $("#wins").text(wins);
+    reset();
+  }
+  if (userScore > target) {
+    alert("You lose.");
+    losses++;
+    $("#losses").text(losses);
+    reset();
+  }
 }
-if (userScore > target) {
-  alert("You lose.");
-  losses++;
+
+function reset() {
+  userScore = 0;
+  var target = 0;
+  crystalArray = [];
+
+  $("#scoreBox").text("0");
+  getTarget();
+  getFirstCrystals();
 }
+
 
