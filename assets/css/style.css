@@ -1,3 +1,57 @@
-img {
+img.crystalIcon {
     width: 100px;
+    height: 100px;
+}
+
+body, html {
+    height: 100%;
+    color: whitesmoke;
+    font-family: 'Orbitron', sans-serif;
+    }
+
+#background { 
+    background-image: url("../images/ivana-cajina-759458-unsplash.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.crystalImage {
+    width: auto;
+}
+
+#targetBox {
+    color: #66e0ff;
+    font-size: 36px;
+}
+#scoreBox {
+    color: #ff704d;
+    font-size: 36px;
+}
+
+#wins {
+    color: #9966ff;
+    font-size: 28px;
+}
+
+#losses {
+    color: #ff3399;
+    font-size: 28px;
+}
+
+#title-game {
+    color: #1aff1a;
+}
+
+#leftBox {
+    width: 50%;
+    margin: 0;
+}
+
+hr {
+    border-style: solid;
+    border-color: whitesmoke;
+    border: 2px 0 0 0;
+    width: 80%;
 }

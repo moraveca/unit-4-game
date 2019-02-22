@@ -5,6 +5,21 @@ var target = "";
 
 var crystalArray = [];
 
+function hideInstructions() {
+  $(".instructions").detach();
+}
+
+function showInstructions() {
+  $("#show-button").on("click", function() {
+    $(".instructions").append;
+  })
+}
+
+function instructionsClick() {
+  $("#show-button").on("click", function() {
+    $("#instructions").toggle();
+    });
+}
 
 function initialStart() {
   getTarget();
@@ -18,23 +33,41 @@ function getTarget() {
 }
 
 function getFirstCrystals() {
-  
-  crystalArray.push(getRandomCrystal());
-  crystalArray.push(getRandomCrystal());
-  crystalArray.push(getRandomCrystal());
-  crystalArray.push(getRandomCrystal());
-  console.log("crystalArray: " + crystalArray);
-
-
-  // if (checkCrystals(crystalArray)) {
-  //   console.log("crystalArray: " + crystalArray);
-  // }
-  // else {
-  //   crystalArray.length = 0;
-  //   getFirstCrystals();
-  // }
-
+  var crystalOne = getRandomCrystal();
+  var crystalTwo = getRandomCrystal();
+  if (crystalOne != crystalTwo) {
+    var crystalThree = getRandomCrystal();
+    if (crystalThree != crystalOne && crystalThree != crystalTwo) {
+      var crystalFour = getRandomCrystal();
+      if (crystalFour != crystalOne && crystalFour != crystalTwo && crystalFour != crystalThree) {
+        crystalArray.push(crystalOne);
+        crystalArray.push(crystalTwo);
+        crystalArray.push(crystalThree);
+        crystalArray.push(crystalFour);
+        console.log("crystalArray: " + crystalArray);
+      }
+      else {
+        var crystalOne = 0;
+        var crystalTwo = 0;
+        var crystalThree = 0;
+        var crystalFour = 0;
+        getFirstCrystals();
+      }
+    }
+    else {
+      var crystalOne = 0;
+      var crystalTwo = 0;
+      var crystalThree = 0;
+      getFirstCrystals();
+    }
+  }
+  else {
+    var crystalOne = 0;
+    var crystalTwo = 0;
+    getFirstCrystals();
+  }
 }
+// The following were my first attempts to get an array for the crystals that would not include a double. They did not work.
 
 // function checkCrystals() {
   // for (i = 0; i < crystalArray.length; i++) {
@@ -81,10 +114,8 @@ function getRandomCrystal(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
 
-
-
+instructionsClick();
 initialStart();
-
 
 $("#crystal1").on("click", function() {
   userScore = userScore + crystalArray[0];
@@ -111,13 +142,15 @@ function checkScore() {
   $("#scoreBox").text(userScore);
 
   if (userScore === target) {
-    alert("You win!");
+    var winSound = new Audio("assets/sounds/1_person_cheering.wav");
+    winSound.play();
     wins ++;
     $("#wins").text(wins);
     reset();
   }
   if (userScore > target) {
-    alert("You lose.");
+    var lossSound = new Audio("assets/Sounds/Sad_Trombone.wav");
+    lossSound.play();
     losses++;
     $("#losses").text(losses);
     reset();
@@ -133,5 +166,4 @@ function reset() {
   getTarget();
   getFirstCrystals();
 }
-
 

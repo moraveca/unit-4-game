@@ -5,40 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet">
 
 </head>
 <body>
-
-
-<div><h3>Target: </h3><p id="targetBox"></p></div>
-
-<div id="winsAndLosses">
-    <h3>Wins:</h3><p id="wins">0</p>
+<div id="background">
+    <div class="text-center">
+        <h1 id="title-game">Crystal Collectors</h1>
+    </div>
+    <div class="text-center" id="instructions">
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your score.</p>
+        <p>You win the game by matching your total scoreo the random number; you lose the game if your score goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time the game starts, the value of the crystals will change!</p>
+    </div>
+    <div class="text-center" id="instButton">
+        <button type="button" class="btn btn-light btn-lg" id="show-button">Instructions</button>
+    </div>
     <br>
-    <h3>Losses:</h3><p id="losses">0</p>
+    <div class="crystalImage text-center">
+        <img class="crystalIcon" id="crystal1" src="assets/images/blue_diamond.png" alt="crystal #1">
+        <img class="crystalIcon" id="crystal2" src="assets/images/orange_crystal.png" alt="crystal #2">
+        <img class="crystalIcon" id="crystal3" src="assets/images/purple_diamond.png" alt="crystal #3">
+        <img class="crystalIcon" id="crystal4" src="assets/images/red-diamond.png" alt="crystal #4">
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Target: </h2>
+                <p id="targetBox"></p>
+            </div>
+            <div class="col-6">
+                <h2>Your score is:</h2>
+                <div id="scoreBox">0</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3>Wins:</h3><p id="wins">0</p>
+            </div>
+            <div class="col-6">
+                <h3>Losses:</h3><p id="losses">0</p>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="crystalImage">
-    <img id="crystal1" src="assets/images/irina-iacob-1364707-unsplash.jpg" alt="crystal #1">
-    <img id="crystal2" src="assets/images/joshua-fuller-616702-unsplash.jpg" alt="crystal #2">
-    <img id="crystal3" src="assets/images/krystal-ng-596638-unsplash.jpg" alt="crystal #3">
-    <img id="crystal4" src="assets/images/krystal-ng-771465-unsplash.jpg" alt="crystal #4">
-</div>
-
-<div><h2>Your score is:</h2></div>
-
-<div id="scoreBox">0</div>
-
-
-
-
-
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/game.js"></script>
 </body>
