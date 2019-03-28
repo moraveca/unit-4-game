@@ -1,1 +1,1 @@
-# unit-4-game
+This game uses Javascript and jQuery. The goal is to equal a specific number by clicking on one of four crystals. Each crystal has a randomly generated number that will change every game. You can find the website at: https://moraveca.github.io/unit-4-game/

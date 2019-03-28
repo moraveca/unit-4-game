@@ -10,15 +10,15 @@ function hideInstructions() {
 }
 
 function showInstructions() {
-  $("#show-button").on("click", function() {
+  $("#show-button").on("click", function () {
     $(".instructions").append;
   })
 }
 
 function instructionsClick() {
-  $("#show-button").on("click", function() {
+  $("#show-button").on("click", function () {
     $("#instructions").toggle();
-    });
+  });
 }
 
 function initialStart() {
@@ -70,17 +70,17 @@ function getFirstCrystals() {
 // The following were my first attempts to get an array for the crystals that would not include a double. They did not work.
 
 // function checkCrystals() {
-  // for (i = 0; i < crystalArray.length; i++) {
-  //   if (crystalArray[i] === crystalArray[(i + 1)]) {
-  //     return false;
-  //   }
-  //   else if (crystalArray[i] === crystalArray[i + 2]) {
-  //     return false;
-  //   }
-  //   else if (crystalArray[i] === crystalArray[i + 3]) {
-  //     return false;
-  //   }
-  // }
+// for (i = 0; i < crystalArray.length; i++) {
+//   if (crystalArray[i] === crystalArray[(i + 1)]) {
+//     return false;
+//   }
+//   else if (crystalArray[i] === crystalArray[i + 2]) {
+//     return false;
+//   }
+//   else if (crystalArray[i] === crystalArray[i + 3]) {
+//     return false;
+//   }
+// }
 
 //   if (crystalArray[0] === crystalArray[1]) {
 //     return false;
@@ -117,26 +117,26 @@ function getRandomCrystal(min, max) {
 instructionsClick();
 initialStart();
 
-$("#crystal1").on("click", function() {
+$("#crystal1").on("click", function () {
   userScore = userScore + crystalArray[0];
   checkScore();
-  });
+});
 
-$("#crystal2").on("click", function() {
+$("#crystal2").on("click", function () {
   userScore = userScore + crystalArray[1];
   checkScore();
-  });
+});
 
-$("#crystal3").on("click", function() {
+$("#crystal3").on("click", function () {
   userScore = userScore + crystalArray[2];
   checkScore();
-  });
+});
 
-$("#crystal4").on("click", function() {
+$("#crystal4").on("click", function () {
   userScore = userScore + crystalArray[3];
   checkScore();
-  });
-    
+});
+
 
 function checkScore() {
   $("#scoreBox").text(userScore);
@@ -144,7 +144,7 @@ function checkScore() {
   if (userScore === target) {
     var winSound = new Audio("assets/sounds/1_person_cheering.wav");
     winSound.play();
-    wins ++;
+    wins++;
     $("#wins").text(wins);
     reset();
   }
